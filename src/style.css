@@ -1,0 +1,55 @@
+:root {
+  --bg: #fbfafd;
+  --bg-soft: #f3f1f8;
+  --surface: #ffffff;
+  --ink: #17151c;
+  --muted: #5d5a68;
+  --line: #e4e1ec;
+  --accent: #6b4fc4;
+  --accent-soft: #e9e3fa;
+  --btn-bg: #17151c;
+  --btn-ink: #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --script: 'Pinyon Script', cursive;
+  --radius: 4px;
+  --maxw: 1180px;
+}
+:root[data-theme='dark'] {
+  --bg: #121018;
+  --bg-soft: #1a1723;
+  --surface: #1e1a29;
+  --ink: #f1eef8;
+  --muted: #a8a3b8;
+  --line: #2f2a3d;
+  --accent: #a58bff;
+  --accent-soft: #2b2447;
+  --btn-bg: #f1eef8;
+  --btn-ink: #121018;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; transition: background .3s, color .3s; }
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.container { width: min(var(--maxw), 100% - 48px); margin-inline: auto; }
+.eyebrow { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; }
+
+.btn { display: inline-flex; align-items: center; gap: .6rem; padding: .85rem 1.4rem; font-size: .8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--btn-bg); border-radius: var(--radius); transition: transform .2s, background .2s, color .2s; }
+.btn-dark { background: var(--btn-bg); color: var(--btn-ink); }
+.btn-dark:hover { transform: translateY(-2px); background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-line { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-line:hover { border-color: var(--accent); color: var(--accent); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; }
+}
