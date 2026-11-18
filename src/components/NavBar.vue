@@ -27,12 +27,12 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
       <div class="actions">
         <button class="icon-btn" @click="$emit('toggle-theme')" :aria-label="theme === 'dark' ? 'Mode clair' : 'Mode sombre'">
-          <Sun v-if="theme === 'dark'" :size="18" :stroke-width="1.5" color="currentColor" aria-hidden="true" />
-          <Moon v-else :size="18" :stroke-width="1.5" color="currentColor" aria-hidden="true" />
+          <Sun v-if="theme === 'dark'" :size="22" :stroke-width="2" color="currentColor" aria-hidden="true" />
+          <Moon v-else :size="22" :stroke-width="2" color="currentColor" aria-hidden="true" />
         </button>
         <a href="#contact" class="btn btn-dark cta">Discutons</a>
         <button class="icon-btn burger" @click="open = !open" :aria-expanded="open" aria-label="Menu">
-          <Menu v-if="!open" :size="20" :stroke-width="1.5" color="currentColor" aria-hidden="true" /><X v-else :size="20" :stroke-width="1.5" color="currentColor" aria-hidden="true" />
+          <Menu v-if="!open" :size="22" :stroke-width="2" color="currentColor" aria-hidden="true" /><X v-else :size="22" :stroke-width="2" color="currentColor" aria-hidden="true" />
         </button>
       </div>
     </div>
@@ -53,7 +53,8 @@ nav a { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; posi
 nav a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--accent); transition: right .25s; }
 nav a:hover::after { right: 0; }
 .actions { display: flex; align-items: center; gap: .8rem; }
-.icon-btn { background: none; border: 1px solid var(--line); border-radius: 50%; width: 38px; height: 38px; display: grid; place-items: center; color: var(--ink); transition: border-color .2s, color .2s; }
+.icon-btn { background: none; border: 1px solid var(--line); border-radius: 50%; width: 42px; height: 42px; padding: 0; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; -webkit-appearance: none; appearance: none; color: var(--ink); transition: border-color .2s, color .2s; }
+.icon-btn :deep(svg) { display: block; width: 22px; height: 22px; min-width: 22px; max-width: none; flex-shrink: 0; stroke: currentColor; }
 .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 .burger { display: none; }
 
