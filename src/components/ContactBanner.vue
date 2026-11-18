@@ -108,7 +108,9 @@ onBeforeUnmount(() => clearTimeout(copiedTimer))
 .email-address { display: flex; min-width: 0; flex: 1 1 auto; align-items: center; gap: .6rem; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); user-select: text; }
 .email-address :deep(svg) { flex: 0 0 auto; color: var(--accent); }
 .email-address span { min-width: 0; overflow-wrap: anywhere; user-select: text; }
-.email-contact .btn { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: .7rem 1rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); transition: transform .2s, color .2s, background .2s, border-color .2s; }
+.email-contact .btn { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 0; min-height: 46px; padding: 0; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); transition: transform .2s, color .2s, background .2s, border-color .2s; }
+.email-contact .btn :deep(svg) { display: block; width: 18px; height: 18px; max-width: none; flex-shrink: 0; margin-left: 1rem; }
+.email-contact .btn span { padding: .7rem 1rem .7rem .5rem; }
 .email-contact .btn:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--accent); color: var(--btn-ink); }
 .social-label { display: flex; align-items: center; gap: .75rem; margin-top: 2rem; color: var(--muted); font-size: .75rem; }
 .social-label::before, .social-label::after { width: 2rem; height: 1px; content: ''; background: var(--line); }

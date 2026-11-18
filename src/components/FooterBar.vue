@@ -49,11 +49,13 @@ function scrollToTop() {
 .footer-nav a { width: fit-content; color: var(--muted); transition: color .2s, transform .2s; }
 .footer-nav a:hover { color: var(--accent); transform: translateX(4px); }
 .footer-nav a:focus-visible, .top-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.soc a { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-size: .72rem; font-weight: 600; color: var(--ink); transition: all .2s; }
+.soc a { width: 34px; height: 34px; padding: 0; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 50%; font-size: .72rem; font-weight: 600; color: var(--ink); transition: all .2s; }
+.soc a :deep(svg) { display: block; width: 18px; height: 18px; max-width: none; flex-shrink: 0; }
 .soc a:hover { background: var(--accent); border-color: var(--accent); color: var(--btn-ink); }
 .bottom { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin-top: 2rem; }
 .copy { text-align: center; font-size: .72rem; }
-.top-button { justify-self: end; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); transition: border-color .2s, color .2s, background .2s; }
+.top-button { justify-self: end; display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; padding: 0; margin: 0; flex: 0 0 auto; line-height: 1; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); -webkit-appearance: none; appearance: none; transition: border-color .2s, color .2s, background .2s; }
+.top-button :deep(svg) { display: block; width: 16px; height: 16px; max-width: none; flex-shrink: 0; }
 .top-button:hover { border-color: var(--accent); background: var(--accent); color: var(--btn-ink); }
 @media (max-width: 700px) {
   .grid { grid-template-columns: 1fr; gap: 1.6rem; }

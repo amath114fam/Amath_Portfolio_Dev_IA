@@ -140,7 +140,8 @@ onBeforeUnmount(() => window.removeEventListener('resize', updateLayout))
 .card h3 { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
 .card p { font-size: .8rem; color: var(--muted); }
 .slider-controls { display: flex; gap: .6rem; }
-.slider-btn { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: none; color: var(--ink); transition: border-color .2s, color .2s, opacity .2s; }
+.slider-btn { width: 42px; height: 42px; flex: 0 0 auto; padding: 0; margin: 0; display: inline-flex; align-items: center; justify-content: center; line-height: 1; border: 1px solid var(--line); border-radius: 50%; background: none; color: var(--ink); -webkit-appearance: none; appearance: none; transition: border-color .2s, color .2s, opacity .2s; }
+.slider-btn :deep(svg) { display: block; width: 20px; height: 20px; min-width: 20px; max-width: none; flex-shrink: 0; }
 .slider-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .slider-btn:disabled { opacity: .35; cursor: not-allowed; }
 .slider-dots { display: flex; justify-content: center; gap: .55rem; margin-top: 1.2rem; }
@@ -150,7 +151,8 @@ onBeforeUnmount(() => window.removeEventListener('resize', updateLayout))
 
 .overlay { position: fixed; inset: 0; background: rgba(10, 8, 18, .6); backdrop-filter: blur(4px); display: grid; place-items: center; z-index: 100; padding: 1.2rem; }
 .modal { position: relative; display: grid; grid-template-columns: 1fr 1fr; width: min(860px, 100%); background: var(--surface); border-radius: 8px; overflow: hidden; }
-.close { position: absolute; top: .6rem; right: .9rem; z-index: 2; background: none; border: 0; font-size: 1.8rem; color: var(--ink); line-height: 1; }
+.close { position: absolute; top: .6rem; right: .9rem; z-index: 2; width: 38px; height: 38px; padding: 0; display: inline-flex; align-items: center; justify-content: center; background: none; border: 0; color: var(--ink); line-height: 1; -webkit-appearance: none; appearance: none; }
+.close :deep(svg) { display: block; width: 20px; height: 20px; max-width: none; flex-shrink: 0; }
 .m-thumb { background: linear-gradient(150deg, var(--c), color-mix(in srgb, var(--c) 40%, #000)); min-height: 280px; display: grid; place-items: center; }
 .m-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .m-thumb strong { font-family: var(--serif); color: #fff; font-size: 2.1rem; font-weight: 500; text-align: center; padding: 1rem; }
