@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { profile } from '../data'
+import { profile, navLinks } from '../data'
 import { Sun, Moon, Menu, X } from 'lucide-vue-next'
 
 defineProps({ theme: String })
@@ -8,13 +8,6 @@ defineEmits(['toggle-theme'])
 
 const open = ref(false)
 const scrolled = ref(false)
-const links = [
-  { href: '#accueil', label: 'Accueil' },
-  { href: '#a-propos', label: 'À propos' },
-  { href: '#projets', label: 'Projets' },
-  { href: '#services', label: 'Services' },
-  { href: '#contact', label: 'Contact' },
-]
 const onScroll = () => (scrolled.value = window.scrollY > 10)
 onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
 onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
@@ -29,7 +22,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
       </a>
 
       <nav :class="{ open }" aria-label="Navigation principale">
-        <a v-for="l in links" :key="l.href" :href="l.href" @click="open = false">{{ l.label }}</a>
+        <a v-for="l in navLinks" :key="l.href" :href="l.href" @click="open = false">{{ l.label }}</a>
       </nav>
 
       <div class="actions">
